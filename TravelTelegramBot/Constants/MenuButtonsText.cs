@@ -15,5 +15,5 @@ public static class MenuButtonsText
     public const string AddCategory = "➕ Добавить категорию";
     public const string AddPlace = "➕ Добавить место";
     public const string AddBus = "➕ Добавить маршрут";
-    public const string Plug = " ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ ";
+    public const string Plug = " ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ ";
 }
