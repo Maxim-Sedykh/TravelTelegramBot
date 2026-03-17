@@ -51,17 +51,12 @@ public sealed class UpdateHandler
 
         _user.UpdateLog(message);
 
-        if (text == MenuButtonsText.Plug)
-        {
-            await _bot.SendTextMessageAsync(chatId, "Вы нажали на заглушку. Ничего не произошло.", cancellationToken: ct);
-        }
-
         if (text == MenuButtonsText.Back)
         {
             _adminWorkflowService.RemoveState(chatId);
             await _bot.SendTextMessageAsync(
                 chatId,
-                "🏠 Главное меню",
+                "🏠 Главное меню.",
                 replyMarkup: _keyboard.GetMainMenu(_storage.Data, isAdmin),
                 cancellationToken: ct);
 

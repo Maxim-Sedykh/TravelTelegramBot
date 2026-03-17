@@ -16,6 +16,7 @@ public sealed class UserService : IUserService
     /// <inheritdoc/>
     public void UpdateLog(Message m)
     {
+        var currentDateTime = DateTime.Now.AddHours(3);
         var u = _storage.Data.Users.FirstOrDefault(x => x.UserId == m.Chat.Id);
         if (u == null)
         {
@@ -24,12 +25,12 @@ public sealed class UserService : IUserService
                 UserId = m.Chat.Id,
                 FirstName = m.From?.FirstName ?? "User",
                 Username = m.From?.Username,
-                LastActive = DateTime.Now
+                LastActive = currentDateTime
             });
         }
         else
         {
-            u.LastActive = DateTime.Now;
+            u.LastActive = currentDateTime;
             u.FirstName = m.From?.FirstName ?? u.FirstName;
         }
         _storage.Save();
